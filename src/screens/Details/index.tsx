@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View, Text, SafeAreaView} from 'react-native';
 import React from 'react';
 import {useRoute} from '@react-navigation/native';
 
@@ -8,9 +8,9 @@ const Index = () => {
   console.log(route.params.item.id);
 
   return (
-    <View>
+    <SafeAreaView>
       <Text>{route.params.item.name}</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
