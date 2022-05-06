@@ -11,7 +11,7 @@ const Product = ({item}) => {
           item,
         });
       }}
-      style={{padding: 20, backgroundColor: 'red', margin: 10}}>
+      style={{padding: 20, backgroundColor: 'gray', margin: 10}}>
       <Text>{item.name}</Text>
     </TouchableOpacity>
   );
