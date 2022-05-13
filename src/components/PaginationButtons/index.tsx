@@ -10,8 +10,9 @@ const PaginationButtons = ({setPage, page}) => {
         paddingBottom: 20,
       }}>
       <TouchableOpacity
+        disabled={page <= 1}
         onPress={() => {
-          if (page > 0) setPage(page - 1);
+          setPage(page - 1);
         }}
         style={{
           paddingHorizontal: 15,
