@@ -41,7 +41,7 @@ const Index = () => {
           </Text>
         )}
         <Text style={{marginTop: 2, fontSize: 15, fontWeight: '500'}}>
-          Location: {character.location.name}
+          Location: {character?.location.name}
         </Text>
       </View>
       <AddOrDeleteButtons setCart={setCart} cart={cart} character={character} />

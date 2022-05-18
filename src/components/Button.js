@@ -2,17 +2,17 @@ import React from 'react';
 import {Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-const Button = ({screenName}) => {
+const Button = ({screenName, text}) => {
   const navigation = useNavigation();
   console.log(navigation);
   return (
     <>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Home');
+          navigation.navigate(screenName);
         }}
         style={styles.button}>
-        <Text style={{color: 'gray'}}>Hola mundo</Text>
+        <Text style={{color: 'white', fontSize: 19}}>{text}</Text>
       </TouchableOpacity>
     </>
   );
@@ -20,7 +20,7 @@ const Button = ({screenName}) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#93FF33',
+    backgroundColor: 'black',
     padding: 15,
     borderRadius: 10,
     margin: 7,

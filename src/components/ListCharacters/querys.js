@@ -13,10 +13,10 @@ export const CHARACTER_QUERY = gql`
         type
         status
         image
+        location {
+          name
+        }
       }
-    }
-    location(id: 1) {
-      id
     }
   }
 `;
