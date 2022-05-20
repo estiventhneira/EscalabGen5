@@ -1,12 +1,18 @@
 import {View, Text, SafeAreaView, Image} from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {useRoute} from '@react-navigation/native';
 import AddOrDeleteButtons from '../../components/AddOrDeleteButton';
+import { CartContext } from '../../navigation/Index';
 
 const Index = () => {
   const route: any = useRoute();
   const character = route?.params?.character;
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
+
+  const {cart, setCart}: any = useContext(CartContext);
+  console.log(cart)
+  
+
 
   return (
     <SafeAreaView>
@@ -41,7 +47,7 @@ const Index = () => {
           </Text>
         )}
         <Text style={{marginTop: 2, fontSize: 15, fontWeight: '500'}}>
-          Location: {character?.location.name}
+          Location: {character?.location?.name}
         </Text>
       </View>
       <AddOrDeleteButtons setCart={setCart} cart={cart} character={character} />
