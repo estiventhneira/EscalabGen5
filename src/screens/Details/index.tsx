@@ -1,12 +1,14 @@
 import {View, Text, SafeAreaView, Image} from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {useRoute} from '@react-navigation/native';
 import AddOrDeleteButtons from '../../components/AddOrDeleteButton';
+import {CartContext} from '../../navigation/Index';
 
 const Index = () => {
   const route: any = useRoute();
   const character = route?.params?.character;
-  const [cart, setCart] = useState([]);
+
+  const {cart, setCart}: any = useContext(CartContext);
 
   return (
     <SafeAreaView>

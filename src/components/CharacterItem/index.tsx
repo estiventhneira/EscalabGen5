@@ -3,7 +3,6 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 
 const width = Dimensions.get('window').width;
-console.log(width * 0.5);
 
 const CharacterItem = ({character}) => {
   const navigation: any = useNavigation();

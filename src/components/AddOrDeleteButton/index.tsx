@@ -2,7 +2,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 const AddOrDeleteButtons = ({setCart, cart, character}) => {
-  const areIn = cart.includes(character);
+  const areIn = cart.find(characterI => characterI.id == character.id);
 
   return (
     <View
@@ -14,7 +14,9 @@ const AddOrDeleteButtons = ({setCart, cart, character}) => {
       {areIn ? (
         <TouchableOpacity
           onPress={() => {
-            const newArray = cart.filter(characterI => characterI != character);
+            const newArray = cart.filter(
+              characterI => characterI.id != character.id,
+            );
             setCart(newArray);
           }}
           style={{

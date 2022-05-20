@@ -1,26 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import CharacterItem from '../../components/CharacterItem';
+import {CartContext} from '../../navigation/Index';
+import PaymentButton from '../../components/PaymentButton';
+import Button from '../../components/Button';
 
 const Index = () => {
-  const [cart, setCart] = useState([
-    {
-      id: 3,
-      gender: 'Male',
-      type: 'Human',
-      status: 'Alive',
-      image:
-        'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/01_%C2%BFQu%C3%A9-puedo-hacer-si-mi-gato-est%C3%A1-triste-.png?itok=w67Nhubc',
-    },
-    {
-      id: 2,
-      gender: 'Male',
-      type: 'Human',
-      status: 'Alive',
-      image:
-        'https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/01_%C2%BFQu%C3%A9-puedo-hacer-si-mi-gato-est%C3%A1-triste-.png?itok=w67Nhubc',
-    },
-  ]);
+  const {cart, setCart}: any = useContext(CartContext);
 
   return (
     <ScrollView
@@ -29,8 +15,6 @@ const Index = () => {
         width: '100%',
       }}>
       {cart.map((item, index) => {
-        console.log(item, index);
-
         return (
           <View key={item?.id}>
             <TouchableOpacity
@@ -55,6 +39,14 @@ const Index = () => {
           </View>
         );
       })}
+
+      {cart.length > 0 ? (
+        <PaymentButton />
+      ) : (
+        <View style={{marginTop: 200}}>
+          <Button text={'Regresar a la pagina de compra'} screenName={'Home'} />
+        </View>
+      )}
     </ScrollView>
   );
 };

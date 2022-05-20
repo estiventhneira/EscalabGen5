@@ -4,7 +4,6 @@ import {useNavigation} from '@react-navigation/native';
 
 const Button = ({screenName, text}) => {
   const navigation = useNavigation();
-  console.log(navigation);
   return (
     <>
       <TouchableOpacity
