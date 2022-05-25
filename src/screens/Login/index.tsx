@@ -8,6 +8,7 @@ import {
 import React, {useState, useContext} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {AuthContext} from '../../navigation/Index';
+import {Camera} from 'react-native-vision-camera';
 
 const Index = () => {
   const [userText, setUserText] = useState('');
@@ -48,6 +49,28 @@ const Index = () => {
             alignSelf: 'center',
           }}>
           <Text style={{color: 'white'}}>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={async () => {
+            const newCameraPermission = await Camera.requestCameraPermission();
+            const newMicrophonePermission =
+              await Camera.requestMicrophonePermission();
+            const cameraPermission = await Camera.getCameraPermissionStatus();
+            const microphonePermission =
+              await Camera.getMicrophonePermissionStatus();
+
+            navigation.navigate('Camera');
+          }}
+          style={{
+            backgroundColor: 'black',
+            padding: 8,
+            borderRadius: 5,
+            width: '50%',
+            alignItems: 'center',
+            marginTop: 10,
+            alignSelf: 'center',
+          }}>
+          <Text style={{color: 'white'}}>Subir Imagen</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
