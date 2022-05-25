@@ -1,12 +1,14 @@
 import React, {useState, useContext} from 'react';
-import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity, Image} from 'react-native';
 import CharacterItem from '../../components/CharacterItem';
 import {CartContext} from '../../navigation/Index';
 import PaymentButton from '../../components/PaymentButton';
 import Button from '../../components/Button';
 
 const Index = () => {
-  const {cart, setCart}: any = useContext(CartContext);
+  const {cart, setCart, photo, setPhoto}: any = useContext(CartContext);
+
+  console.log(photo, 'desde checkout');
 
   return (
     <ScrollView
@@ -14,6 +16,12 @@ const Index = () => {
         alignItems: 'center',
         width: '100%',
       }}>
+      {true ? (
+        <Image
+          source={{uri: `file://, ${photo.path}`}}
+          style={{height: 150, width: 150}}
+        />
+      ) : null}
       {cart.map((item, index) => {
         return (
           <View key={item?.id}>

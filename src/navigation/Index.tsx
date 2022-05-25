@@ -11,12 +11,14 @@ const Index = () => {
     uri: 'https://rickandmortyapi.com/graphql',
     cache: new InMemoryCache(),
   });
+
   const [cart, setCart] = useState([]);
+  const [photo, setPhoto] = useState();
   const [auth, setAuth] = useState(false);
 
   return (
     <AuthContext.Provider value={{auth, setAuth}}>
-      <CartContext.Provider value={{cart, setCart}}>
+      <CartContext.Provider value={{cart, setCart, photo, setPhoto}}>
         <ApolloProvider client={client}>
           <NavigationContainer>
             <StackNavigator />
