@@ -6094,6 +6094,11 @@
     "react-freeze" "^1.0.0"
     "warn-once" "^0.1.0"
 
+"react-native-vision-camera@^2.13.3":
+  "integrity" "sha512-aikp6kNmb9b8lsVFKEKCBgch5h93Cs8Qqw/bSZsn/dO+Qa4uktpe89WIO1VTs88d40vJiLeYFlbyWe589E/UuA=="
+  "resolved" "https://registry.npmjs.org/react-native-vision-camera/-/react-native-vision-camera-2.13.3.tgz"
+  "version" "2.13.3"
+
 "react-native@*", "react-native@0.68.1":
   "integrity" "sha512-5gfvslo5NO2Ece2k/q41eVOK3ca4u1QAOf+qM+auvOiUA4/QR5Yr0WfSGbRpUr2GaFgv7qP11F4+elCravg7uQ=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.68.1.tgz"

@@ -2,6 +2,7 @@ import React, { createContext, useState } from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNavigator from './StackNavigator';
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import { Camera } from 'react-native-vision-camera';
 
 export const CartContext = createContext({});
 export const AuthContext = createContext({});

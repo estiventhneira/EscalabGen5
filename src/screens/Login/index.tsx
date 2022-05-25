@@ -2,6 +2,7 @@ import {SafeAreaView, View, Text, TextInput, TouchableOpacity} from 'react-nativ
 import React, {useContext, useState} from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { AuthContext } from '../../navigation/Index';
+import { Camera } from 'react-native-vision-camera';
 
 const Index = () => {
 
@@ -32,9 +33,23 @@ const Index = () => {
           style={{backgroundColor: 'black', padding: 5, borderRadius: 5, width: '50%', alignItems: 'center', marginTop: 10, alignSelf: 'center'}}>
           <Text style={{color: 'white'}}>Login</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity 
+          onPress={ async ()=> {
+            const newCameraPermission = await Camera.requestCameraPermission()
+const newMicrophonePermission = await Camera.requestMicrophonePermission()
+            const cameraPermission = await Camera.getCameraPermissionStatus()
+            const microphonePermission = await Camera.getMicrophonePermissionStatus()
+
+            // console.log(cameraPermission, microphonePermission)
+            navigation.navigate('Camera')}
+          }
+          // disabled={!fieldsFull}
+          style={{backgroundColor: 'black', padding: 5, borderRadius: 5, width: '50%', alignItems: 'center', marginTop: 10, alignSelf: 'center'}}>
+          <Text style={{color: 'white'}}>Subir Imagen</Text>
+        </TouchableOpacity>
       </View>
-      <Text>{userText}</Text>
-      <Text>{userPassword}</Text>
+      
 
     </SafeAreaView>
   );
